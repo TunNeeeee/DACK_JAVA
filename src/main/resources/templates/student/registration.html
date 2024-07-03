@@ -41,7 +41,7 @@
         <form action="/student/registration/confirm" method="post">
             <div class="mb-3">
                 <label for="event" class="form-label">Hội thao</label>
-                <select class="form-control" id="event" name="sport" required>
+                <select class="form-control" id="event" name="event" required>
                     <option value="">Hãy chọn hội thao tham gia</option>
                     <option th:each="event : ${events}"
                             th:value="${event.idEvent}"

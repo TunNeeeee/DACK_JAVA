@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/student")
@@ -39,6 +43,19 @@ public class UserController {
     @GetMapping("/list-rank")
     public String showAllRanks(Model model) {
         List<Rank> ranks = rankService.findAllRanks();
+        Map<Integer, List<Team>> teamsByRank = new HashMap<>();
+
+        // Fetch teams sorted by noRank and grouped by idRank
+        List<Team> teams = teamService.getTeamsSortedByNoRank(); // Ensure this method sorts by noRank
+
+        for (Team team : teams) {
+            int idRank = team.getRank().getIdRank(); // Assuming Team has a reference to Rank
+            if (!teamsByRank.containsKey(idRank)) {
+                teamsByRank.put(idRank, new ArrayList<>());
+            }
+            teamsByRank.get(idRank).add(team);
+        }
+        model.addAttribute("teamsByRank", teamsByRank);
         model.addAttribute("ranks", ranks);
         return "student/listRank";
     }

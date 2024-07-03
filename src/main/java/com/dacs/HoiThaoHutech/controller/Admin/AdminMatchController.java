@@ -93,7 +93,7 @@ public class AdminMatchController {
         matchService.updateMatchResult(idMatch, point1, point2);
         // Lấy thông tin trận đấu sau khi cập nhật
         Match match = matchService.findById(idMatch);
-        // Nếu trận đấu thuộc vòng loại tt
+        // Nếu trận đấu thuộc vòng loai tt
         if(match.getRound().getIdRound() != 1){
             Team team1 = match.getTeam1();
             Team team2 = match.getTeam2();

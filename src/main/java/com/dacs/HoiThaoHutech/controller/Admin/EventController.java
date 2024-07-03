@@ -58,7 +58,7 @@ public class EventController {
     @PostMapping("/delete-event/{id}")
     public String deleteEvent(@PathVariable Integer id) {
         Event event =this.eventService.findById(id);
-        Status status = this.statusService.getById(4);
+        Status status = this.statusService.getById(0);
         event.setStatus(status);
         eventService.updateEvent(id,event);
         return "redirect:/admin/event";

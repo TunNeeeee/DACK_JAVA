@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -26,10 +28,21 @@ public class RankController {
     @GetMapping("/rank")
     public String showAllRankings(Model model) {
         List<Rank> ranks = rankService.findAllRanks();
-        List<Team> teams = teamService.getTeamsSortedByNoFinal();
+        Map<Integer, List<Team>> teamsByRank = new HashMap<>();
+
+        // Fetch teams sorted by noRank and grouped by idRank
+        List<Team> teams = teamService.getTeamsSortedByNoRank(); // Ensure this method sorts by noRank
+
+        for (Team team : teams) {
+            int idRank = team.getRank().getIdRank(); // Assuming Team has a reference to Rank
+            if (!teamsByRank.containsKey(idRank)) {
+                teamsByRank.put(idRank, new ArrayList<>());
+            }
+            teamsByRank.get(idRank).add(team);
+        }
         Map<Integer, Long> teamCountBySport = teams.stream()
                 .collect(Collectors.groupingBy(team -> team.getSport().getIdSport(), Collectors.counting()));
-
+        model.addAttribute("teamsByRank", teamsByRank);
         model.addAttribute("ranks", ranks);
         model.addAttribute("teamCountBySport", teamCountBySport);
         return "admin/rank/list";

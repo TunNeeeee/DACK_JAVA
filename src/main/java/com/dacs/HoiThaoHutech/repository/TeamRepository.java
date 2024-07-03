@@ -14,6 +14,7 @@ public interface TeamRepository extends JpaRepository<Team, Integer> {
     List<Team> findTeamByStatus(Integer status);
     List<Team> findBySport_IdSportAndStatus(Integer sportId, Integer status);
     List<Team> findAllByOrderByNoFinalAsc();
+    List<Team> findAllByOrderByNoRankAsc();
     List<Team> findBySport_IdSportOrderByNoFinalAsc(Integer sportId);
 
 

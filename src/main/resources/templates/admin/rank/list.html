@@ -34,7 +34,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="team : ${rank.listTeam}">
+                    <tr th:each="team : ${teamsByRank[rank.idRank]}" th:if="${teamsByRank[rank.idRank] != null}">
                         <td th:text="${team.noRank}"></td>
                         <td th:text="${team.teamName}"></td>
                         <td th:text="${team.numberGame}"></td>

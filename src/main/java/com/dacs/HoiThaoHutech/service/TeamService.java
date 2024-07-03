@@ -103,6 +103,9 @@ public class TeamService {
     public List<Team> getTeamsSortedByNoFinal() {
         return teamRepository.findAllByOrderByNoFinalAsc();
     }
+    public List<Team> getTeamsSortedByNoRank() {
+        return teamRepository.findAllByOrderByNoRankAsc();
+    }
     public List<Team> getTeamsBySportIdSortedByNoFinal(Integer sportId) {
         return teamRepository.findBySport_IdSportOrderByNoFinalAsc(sportId);
     }
