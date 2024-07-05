@@ -32,18 +32,24 @@ public class RankController {
 
         // Fetch teams sorted by noRank and grouped by idRank
         List<Team> teams = teamService.getTeamsSortedByNoRank(); // Ensure this method sorts by noRank
-
+        List<Team> unrankedTeams = new ArrayList<>();
         for (Team team : teams) {
-            int idRank = team.getRank().getIdRank(); // Assuming Team has a reference to Rank
-            if (!teamsByRank.containsKey(idRank)) {
-                teamsByRank.put(idRank, new ArrayList<>());
+            Rank rank = team.getRank();
+            if (rank != null) {
+                int idRank = rank.getIdRank(); // Assuming Team has a reference to Rank
+                if (!teamsByRank.containsKey(idRank)) {
+                    teamsByRank.put(idRank, new ArrayList<>());
+                }
+                teamsByRank.get(idRank).add(team);
+            } else {
+                unrankedTeams.add(team);
             }
-            teamsByRank.get(idRank).add(team);
         }
         Map<Integer, Long> teamCountBySport = teams.stream()
                 .collect(Collectors.groupingBy(team -> team.getSport().getIdSport(), Collectors.counting()));
         model.addAttribute("teamsByRank", teamsByRank);
         model.addAttribute("ranks", ranks);
+        model.addAttribute("unrankedTeams", unrankedTeams);
         model.addAttribute("teamCountBySport", teamCountBySport);
         return "admin/rank/list";
     }
