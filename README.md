@@ -9,7 +9,9 @@ Hệ thống Quản Lý Hội Thao là một ứng dụng web full-stack đượ
 - **Bài học**: Qua dự án này, tôi đã học được cách tích hợp frontend (React) với backend (Spring Boot), quản lý tải lên tệp, triển khai hệ thống xác thực người dùng và xử lý hệ thống vai trò đa người dùng (quản trị viên, người tham gia) trong một ứng dụng web full-stack có khả năng mở rộng.
 ---
 
+# **Cách Sử Dụng**
 
+Khi cả server backend và frontend đều đã chạy, ứng dụng có thể được truy cập qua trình duyệt tại địa chỉ http://localhost:3000. Dưới đây là một số hình ảnh minh họa các tính năng chính:
 Trang đăng nhập
 ![Screenshot 2024-06-03 151744](https://github.com/user-attachments/assets/a218cd74-5011-435c-a3da-10b1d1935b7c)
 Trang chủ của sinh viên 
