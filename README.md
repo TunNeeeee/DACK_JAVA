@@ -30,5 +30,12 @@ Khi cả server backend và frontend đều đã chạy, ứng dụng có thể 
 ![Screenshot 2024-06-23 083220](https://github.com/user-attachments/assets/9ab4bf8c-03b6-4f0c-b59c-bf96ab7d491e)
 - **Trang quản lý thành tích**
 ![Screenshot 2024-06-23 085924](https://github.com/user-attachments/assets/fe768c31-a9b4-4483-ae53-8f31ef858b51)
+---
 
+## Thành viên thực hiện
+
+- **[Nguyen Dinh Tuan](https://github.com/TunNeeeee)** - Team Leader/Fullstack
+- **[Phan Nguyen Tan Tai]** - Fullstack
+- **[Nguyen Nhu Quynh])** - Front-end
+---
 
