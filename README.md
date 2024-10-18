@@ -16,5 +16,5 @@ Giao diện trang xem Lịch thi đấu - Kết quả
 ![Screenshot 2024-06-23 083220](https://github.com/user-attachments/assets/9ab4bf8c-03b6-4f0c-b59c-bf96ab7d491e)
 Trang quản lý thành tích
 ![Screenshot 2024-06-23 085924](https://github.com/user-attachments/assets/fe768c31-a9b4-4483-ae53-8f31ef858b51)
-ets/c9b251ad-e342-4afd-bba4-f0e607b016bb)
+
 
