@@ -1,3 +1,15 @@
+# ** Quản lý hội thao sinh viên**
+
+## Mô Tả
+Hệ thống Quản Lý Hội Thao là một ứng dụng web full-stack được thiết kế để quản lý và hỗ trợ việc đăng ký và tổ chức các sự kiện thể thao. Xây dựng bằng Spring Boot cho backend và React cho frontend, hệ thống cho phép người dùng khám phá các sự kiện sắp diễn ra, đăng ký đội thi đấu, tải lên hình ảnh minh chứng chuyển khoản và quản lý việc tham gia sự kiện một cách dễ dàng.
+
+_**Động lực**: Động lực để phát triển dự án này xuất phát từ nhu cầu cần một nền tảng tiện lợi và hiệu quả để quản lý việc đăng ký và truyền thông giữa ban tổ chức và người tham gia các sự kiện thể thao.
+_**Tại sao phát triển?**: Dự án được xây dựng để giải quyết những thách thức trong việc tổ chức hội thao, chẳng hạn như quản lý đăng ký đội, xử lý minh chứng thanh toán và phối hợp giữa ban tổ chức và người tham gia. Sử dụng các công nghệ hiện đại, chúng tôi mong muốn tạo ra một giải pháp giúp đơn giản hóa các quy trình này.
+_**Vấn đề giải quyết**: Hệ thống giải quyết các vấn đề liên quan đến việc đăng ký thiếu tổ chức, xử lý thanh toán không hiệu quả và thiếu sự phối hợp giữa các bên tham gia.
+_**Bài học**: Qua dự án này, tôi đã học được cách tích hợp frontend (React) với backend (Spring Boot), quản lý tải lên tệp, triển khai hệ thống xác thực người dùng và xử lý hệ thống vai trò đa người dùng (quản trị viên, người tham gia) trong một ứng dụng web full-stack có khả năng mở rộng.
+
+
+
 Trang đăng nhập
 ![Screenshot 2024-06-03 151744](https://github.com/user-attachments/assets/a218cd74-5011-435c-a3da-10b1d1935b7c)
 Trang chủ của sinh viên 
